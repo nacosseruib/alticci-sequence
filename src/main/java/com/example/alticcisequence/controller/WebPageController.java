@@ -14,10 +14,7 @@ public class WebPageController {
 
     @GetMapping({"/"})
     public ModelAndView homePage(Model model) {
-        //        AlticciSequenceController AlticciSequenceController = new AlticciSequenceController();
-        //        model.addAttribute("result", AlticciSequenceController.mapAlticci(n));
         return new ModelAndView("index");
-
     }
 
 }
