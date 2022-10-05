@@ -34,7 +34,7 @@ public class AlticciSequenceController {
             @ApiResponse(code = 204, message = "Alticci Sequence Generated")
     })
 
-    @GetMapping("/alticci/{n}")
+    @GetMapping("/get-alticci/{n}")
     @Cacheable("alticci")
     public ResponseEntity<List<Integer>> mapAlticci(@PathVariable(value = "n") int n) {
 

@@ -12,9 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class WebPageController {
 
-    @GetMapping({"/"})
+    @GetMapping({"/alticci/{n}"})
     public ModelAndView homePage(Model model) {
+
         return new ModelAndView("index");
+
     }
 
 }
