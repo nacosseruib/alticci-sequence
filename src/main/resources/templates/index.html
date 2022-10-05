@@ -4,10 +4,24 @@
     <head>
         <meta charset="UTF-8">
         <title>Alticci Sequence Page</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body>
         Welcome to Alticci Sequence Computation.
         <br />
-        Result: ${result}
+        <script>
+            const computeSequence = async () => {
+                const response = await fetch('http://localhost:8082/alticci/5', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const alticciResult = await response.json(); //extract JSON from the http response
+                document.getElementById("result").innerHTML = JSON.stringify(alticciResult);
+            }
+            computeSequence();
+        </script>
+        <div id='result'></div>
     </body>
 </html>
